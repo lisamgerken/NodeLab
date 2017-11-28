@@ -1,5 +1,11 @@
-var toDo = ["grocery shopping", "laundry", "walk the dogs", "wash dishes"];
+var express = require("express");
+var toDo = [
+			{ name:"grocery shopping" },
+			{ name: "laundry" }, 
+			{ name: "walk the dogs" },
+			{ name: "wash dishes" }
+			];
 
-module.exports.info = toDo;
+module.exports = toDo;
 
 

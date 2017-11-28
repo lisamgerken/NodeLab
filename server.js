@@ -1,10 +1,12 @@
-var http = require("http");
+var express = require("express");
+var app = express();
 var myList = require("./todo.js");
+var routePages = require("./routes.js")
+app.use("/", routePages);
+app.use(express.static(__dirname + "/public"));
 
-http.createServer(onRequest).listen(3000);
 
-function onRequest(request, response) {
-	response.writeHead(200, { "Content-type": "text/plain"});
-	response.write(myList.info[Math.floor(Math.random() * myList.info.length)]);
-	response.end();
-}
+var server = app.listen(3000, function() {
+	console.log(myList);
+});
+
